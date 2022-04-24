@@ -1,0 +1,36 @@
+{% extends 'layouts.html' %} {% block content %}
+<div class="card text-center">
+  <div class="card text-center">
+  <h5 class="card-header">
+    My Watch List 🕵️‍♂️
+  </h5>
+  <div class="card-body">
+    <div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Delete</th>
+            <th scope="col">Crypto Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for obj in results20 %}
+          <tr>
+            <td><button type="button" class="btn btn-danger btn-sm">Delete</button></td>
+            <td>{{obj.name}}</td>
+            <td>{{obj.symbol}}</td>
+            <td>{{obj.slug}}</td>
+            <td>{{obj.quote.USD.price}}</td>
+          </tr>
+          {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock content %}

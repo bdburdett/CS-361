@@ -1,0 +1,83 @@
+{% extends 'layouts.html' %} 
+{% block content %}
+<div class="card text-center">
+  <br>
+  <br>
+  <br>
+  <div class="card text-center">
+  <h3 class="card-header">
+    🔥 Today's Hot Stock 🔥
+  </h3>
+  <div class="card-body">
+    <div class="container">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Crypto Name</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Slug</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for obj in results1 %}
+            <tr>
+              <td>{{obj.name}}</td>
+              <td>{{obj.symbol}}</td>
+              <td>{{obj.slug}}</td>
+              <td>{{obj.quote.USD.price}}</td>
+            </tr>
+            {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <a href="#" class="btn btn-primary">Add to Watch List</a>
+  </div>
+</div>
+</div>
+
+<div class="card text-center">
+  <br>
+  <br>
+  <div class="card text-center">
+  <h3 class="card-header">
+    CryptoTrack Top 20 📈
+  </h3>
+  <div class="card-body">
+    <div class="container">
+      
+ 
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Add</th>
+          <th scope="col">Crypto Name</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Slug</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for obj in results20 %}
+        <tr>
+          <td><a href="" class="btn btn-primary btn-xs" data-toggle="modal" data-data-target="#modaladd">Add</a></td>
+          <td>{{obj.name}}</td>
+          <td>{{obj.symbol}}</td>
+          <td>{{obj.slug}}</td>
+          <td>{{obj.quote.USD.price}}</td>
+        </tr>
+        {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</div>
+</div>
+{% endblock content %}
+
+
+<!-- <form action="{{ url_for('home') }}" method="POST">
+  <input type="submit" value="Add">
+</form> -->
