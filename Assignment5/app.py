@@ -16,6 +16,7 @@ crypto = Crypto()
 @app.route("/")
 @app.route("/home", methods=['POST', 'GET'])
 def home():
+    user_location = crypto.get_ip_loc()
     # returns the formatted price of the coins in USD
     results1 = crypto.get_top_1()
     results20 = crypto.get_top_20()
